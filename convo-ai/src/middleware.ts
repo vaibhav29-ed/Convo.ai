@@ -1,11 +1,24 @@
 import { NextResponse, NextRequest } from "next/server";
-import { auth } from "@/lib/auth";
+import { jwtVerify } from "jose";
 
 const protectedRoutes = ["/dashboard"];
 const authRoutes = ["/auth/login", "/auth/signup"];
 
+async function getSession(req: NextRequest) {
+  const token = req.cookies.get("next-auth.session-token")?.value
+    ?? req.cookies.get("__Secure-next-auth.session-token")?.value;
+  if (!token) return null;
+  try {
+    const secret = new TextEncoder().encode(process.env.NEXTAUTH_SECRET);
+    const { payload } = await jwtVerify(token, secret);
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
 export default async function middleware(req: NextRequest) {
-  const session = await auth();
+  const session = await getSession(req);
   const { pathname } = req.nextUrl;
 
   if (protectedRoutes.some((route) => pathname.startsWith(route))) {
