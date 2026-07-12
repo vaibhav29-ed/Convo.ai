@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@pinecone-database/pinecone": "^8.0.0",
+    "openai": "^6.46.0"
+  }
+}
