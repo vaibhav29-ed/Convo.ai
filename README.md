@@ -1,11 +1,6 @@
 # Convo.ai
 
-> Chat with your PDF documents using AI-powered RAG (Retrieval-Augmented Generation).
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178c6)
 
 ## Features
 
