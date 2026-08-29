@@ -22,11 +22,6 @@
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- OpenAI API key
-- (Optional) Pinecone account for vector storage
 
 
 
